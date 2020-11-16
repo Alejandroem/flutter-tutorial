@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import './question.dart';
-import './answer.dart';
+import 'question.dart';
+import 'answer.dart';
 
 main() => runApp(MyApp());
 
