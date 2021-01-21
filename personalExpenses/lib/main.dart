@@ -14,6 +14,9 @@ class MyApp extends StatelessWidget {
         id: 't2', title: 'New Shoes', amount: 43.44, date: DateTime.now()),
   ];
 
+  String titleInput;
+  String amountInput;
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -28,7 +31,7 @@ class MyApp extends StatelessWidget {
           title: Text('Hello'),
         ),
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          // mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Container(
@@ -37,6 +40,41 @@ class MyApp extends StatelessWidget {
                 color: Colors.blue,
                 child: Text('Chart!'),
                 elevation: 5,
+              ),
+            ),
+            Card(
+              elevation: 5,
+              child: Container(
+                padding: EdgeInsets.all(10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    TextField(
+                      decoration: InputDecoration(
+                        labelText: 'Title',
+                      ),
+                      onChanged: (value) {
+                        titleInput = value;
+                      },
+                    ),
+                    TextField(
+                      decoration: InputDecoration(
+                        labelText: 'Amount',
+                      ),
+                      onChanged: (value) {
+                        amountInput = value;
+                      },
+                    ),
+                    FlatButton(
+                      child: Text('Add transaction'),
+                      textColor: Colors.purple,
+                      onPressed: () {
+                        print(titleInput);
+                        print(amountInput);
+                      },
+                    ),
+                  ],
+                ),
               ),
             ),
             Column(
