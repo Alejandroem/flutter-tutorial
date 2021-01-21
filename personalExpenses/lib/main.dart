@@ -14,8 +14,10 @@ class MyApp extends StatelessWidget {
         id: 't2', title: 'New Shoes', amount: 43.44, date: DateTime.now()),
   ];
 
-  String titleInput;
-  String amountInput;
+  // String titleInput;
+  // String amountInput;
+  final titleController = TextEditingController();
+  final amountController = TextEditingController();
 
   // This widget is the root of your application.
   @override
@@ -53,24 +55,26 @@ class MyApp extends StatelessWidget {
                       decoration: InputDecoration(
                         labelText: 'Title',
                       ),
-                      onChanged: (value) {
-                        titleInput = value;
-                      },
+                      // onChanged: (value) {
+                      //   titleInput = value;
+                      // },
+                      controller: titleController,
                     ),
                     TextField(
                       decoration: InputDecoration(
                         labelText: 'Amount',
                       ),
-                      onChanged: (value) {
-                        amountInput = value;
-                      },
+                      // onChanged: (value) {
+                      //   amountInput = value;
+                      // },
+                      controller: amountController,
                     ),
                     FlatButton(
                       child: Text('Add transaction'),
                       textColor: Colors.purple,
                       onPressed: () {
-                        print(titleInput);
-                        print(amountInput);
+                        print(titleController.text);
+                        print(amountController.text);
                       },
                     ),
                   ],
